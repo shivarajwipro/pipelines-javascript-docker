@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: shivarajwipropipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shivarajwipropipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: shivarajwipropipelinesjavascriptdocker 
+          image: mycontainerregistryscg.azurecr.io/shivarajwipropipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
