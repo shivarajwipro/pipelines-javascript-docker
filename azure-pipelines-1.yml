@@ -37,3 +37,11 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+    - task: SnykSecurityScan@0
+      inputs:
+        serviceConnectionEndpoint: 'Snyk Connection'
+        testType: 'container'
+        dockerImageName: 'mycontainerregistryscg.azurecr.io/shivarajwipropipelinesjavascriptdocker1:2'
+        monitorOnBuild: true
+        failOnIssues: true       
