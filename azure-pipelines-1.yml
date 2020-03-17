@@ -14,7 +14,7 @@ variables:
   imageRepository: 'shivarajwipropipelinesjavascriptdocker1'
   containerRegistry: 'mycontainerregistryscg.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 'latest'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -42,6 +42,6 @@ stages:
       inputs:
         serviceConnectionEndpoint: 'Snyk Connection'
         testType: 'container'
-        dockerImageName: 'mycontainerregistryscg.azurecr.io/shivarajwipropipelinesjavascriptdocker1:2'
+        dockerImageName: 'mycontainerregistryscg.azurecr.io/shivarajwipropipelinesjavascriptdocker1:latest'
         monitorOnBuild: true
         failOnIssues: true       
